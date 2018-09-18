@@ -70,10 +70,12 @@ public class ItemOverviewController {
     @FXML
     private void handleDeleteItem() {
         int selectedIndex = itemTable.getSelectionModel().getSelectedIndex();
-        String selectedItem = itemTable.getSelectionModel().getSelectedItem().getItemOfExp();
+
         if (selectedIndex >= 0) {
+            String selectedItem = itemTable.getSelectionModel().getSelectedItem().getItemOfExp();
             //вызов диалога для подтверждения удаления
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.initOwner(mainApp.getPrimaryStage());
             alert.setTitle("Delete dialog");
             alert.setHeaderText("Deleting " + selectedItem);
             alert.setContentText("Are you sure you want to delete " + selectedItem + "?");

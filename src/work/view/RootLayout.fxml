@@ -18,7 +18,7 @@
               <MenuItem mnemonicParsing="false" text="Exit" onAction="#handleExit"/>
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Statistics">
             <items>
               <MenuItem mnemonicParsing="false" text="Show Statistics" onAction="#handleShowStatistics"/>
             </items>

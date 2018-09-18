@@ -54,8 +54,8 @@ public class MainApp extends Application {
         this.primaryStage.setTitle("WorkForceCost");
 
         // Устанавливаем иконку приложения.
-        this.primaryStage.getIcons().add(new Image("file:resources/images/icon.png"));
-
+        //this.primaryStage.getIcons().add(new Image("file:resources/images/icon.png"));
+        this.primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
         initRootLayout();
 
         showItemOverview();
@@ -123,7 +123,8 @@ public class MainApp extends Application {
             //создаем диалоговое окно
             Stage dialogStge = new Stage();
             dialogStge.setTitle("Edit");
-            dialogStge.getIcons().add(new Image("file:resources/images/icon.png"));
+            //dialogStge.getIcons().add(new Image("file:resources/images/icon.png"));
+            dialogStge.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
             dialogStge.initModality(Modality.WINDOW_MODAL);
             dialogStge.initOwner(primaryStage);
             Scene scene = new Scene(page);
@@ -219,6 +220,7 @@ public class MainApp extends Application {
             AnchorPane page = (AnchorPane) loader.load();
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Statistics");
+            dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);

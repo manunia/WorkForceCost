@@ -3,12 +3,9 @@
     <output-path>$PROJECT_DIR$/out/artifacts/WorkForceCost</output-path>
     <properties id="javafx-properties">
       <options>
-        <option name="alias" value="" />
         <option name="appClass" value="work.MainApp" />
         <option name="description" value="" />
-        <option name="enabledSigning" value="true" />
         <option name="htmlPlaceholderId" value="" />
-        <option name="keystore" value="" />
         <option name="nativeBundle" value="all" />
         <option name="title" value="" />
         <option name="vendor" value="" />
