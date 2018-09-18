@@ -71,6 +71,7 @@ public class RootLayoutController {
     @FXML
     private void handleAbout() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.initOwner(mainApp.getPrimaryStage());
         alert.setTitle("WorkForceCost");
         alert.setHeaderText("About");
         alert.setContentText("Appliation for work force cost calculation");
