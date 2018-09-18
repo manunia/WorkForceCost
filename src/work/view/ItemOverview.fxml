@@ -19,7 +19,7 @@
                <children>
                   <TableView fx:id="itemTable" prefHeight="299.0" prefWidth="254.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-79.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="itemColumn" prefWidth="75.0" text="Item" />
+                      <TableColumn fx:id="itemColumn" prefWidth="75.0" text="Item"/>
                       <TableColumn fx:id="atAllColumn" prefWidth="75.0" text="atAll" />
                       <TableColumn fx:id="monthColumn" prefWidth="75.0" text="month" />
                     </columns>

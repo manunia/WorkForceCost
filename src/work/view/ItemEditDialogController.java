@@ -3,7 +3,6 @@ package work.view;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import work.model.Item;
@@ -13,9 +12,9 @@ public class ItemEditDialogController {
     @FXML
     private TextField itemNameField;
     @FXML
-    private TextField coctsAtAllField;
+    private TextField costsAtAllField;
     @FXML
-    private Label costsAtMonthLabel;
+    private TextField costsAtMonthField;
 
     private Stage dialogStage;
     private Item item;
@@ -37,8 +36,8 @@ public class ItemEditDialogController {
         this.item = item;
 
         itemNameField.setText(item.getItemOfExp());
-        coctsAtAllField.setText(Integer.toString(item.getCostsAtAll()));
-        costsAtMonthLabel.setText(Integer.toString(item.getCostsAtMonth()));
+        costsAtAllField.setText(Integer.toString(item.getCostsAtAll()));
+        costsAtMonthField.setText(Integer.toString(item.getCostsAtMonth()));
     }
 
     public boolean isOkClicked() {
@@ -48,11 +47,17 @@ public class ItemEditDialogController {
     //если пользователь нажал Ок
     @FXML
     private void handleOk() {
+        //проверяем корректность ввода
         if (isInputValid()) {
             item.setItemOfExp(itemNameField.getText());
-            item.setCostsAtAll(Integer.parseInt(coctsAtAllField.getText()));
-            item.setCostsAtMonth(Integer.parseInt(costsAtMonthLabel.getText()));
-
+            //проверяем в какое поле введено новое значение
+            if (isChanged()) {
+                item.setCostsAtAll(Integer.parseInt(costsAtMonthField.getText()) * 300);
+                item.setCostsAtMonth(Integer.parseInt(costsAtMonthField.getText()));
+            } else {
+                item.setCostsAtAll(Integer.parseInt(costsAtAllField.getText()));
+                item.setCostsAtMonth(Integer.parseInt(costsAtMonthField.getText()));
+            }
             okClicked = true;
             dialogStage.close();
         }
@@ -70,12 +75,14 @@ public class ItemEditDialogController {
         if (itemNameField.getText() == null || itemNameField.getText().length() == 0) {
             errorMessage += "No valid name!\n";
         }
-        if (coctsAtAllField.getText() == null || coctsAtAllField.getText().length() == 0) {
+        if (costsAtAllField.getText() == null || costsAtAllField.getText().length() == 0
+                || costsAtMonthField.getText() == null || costsAtMonthField.getText().length() == 0) {
             errorMessage += "No valid cost!\n";
         } else {
             //пытаемся преобразовать введенное значение в int
             try {
-                Integer.parseInt(coctsAtAllField.getText());
+                Integer.parseInt(costsAtAllField.getText());
+                Integer.parseInt(costsAtMonthField.getText());
             } catch (NumberFormatException e) {
                 errorMessage += "No valid cost (must be an integer)!\n";
             }
@@ -94,5 +101,12 @@ public class ItemEditDialogController {
 
             return false;
         }
+    }
+
+    //проверяем изменения в текстовое поле затрат за месяц
+    private boolean isChanged() {
+        if (item.getCostsAtMonth() != Integer.parseInt(costsAtMonthField.getText())) {
+            return true;
+        } else return false;
     }
 }
