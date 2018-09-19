@@ -55,7 +55,7 @@ public class MainApp extends Application {
 
         // Устанавливаем иконку приложения.
         //this.primaryStage.getIcons().add(new Image("file:resources/images/icon.png"));
-        this.primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
+        //this.primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
         initRootLayout();
 
         showItemOverview();

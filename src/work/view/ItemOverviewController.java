@@ -15,12 +15,16 @@ public class ItemOverviewController {
     @FXML
     private TableColumn<Item,Integer> atAllColumn;
     @FXML
+    private TableColumn<Item,Integer> yearColumn;
+    @FXML
     private TableColumn<Item,Integer> monthColumn;
 
     @FXML
     private Label itemLabel;
     @FXML
     private Label atAllLabel;
+    @FXML
+    private Label yearLabel;
     @FXML
     private Label monthLabel;
     @FXML
@@ -36,6 +40,7 @@ public class ItemOverviewController {
         //инициализация таблицы
         itemColumn.setCellValueFactory(cellData->cellData.getValue().itemOfExpProperty());
         atAllColumn.setCellValueFactory(cellData->cellData.getValue().costsAtAllProperty().asObject());
+        yearColumn.setCellValueFactory(cellData->cellData.getValue().costsAtYearProperty().asObject());
         monthColumn.setCellValueFactory(cellData->cellData.getValue().costsAtMonthProperty().asObject());
         //очистка дополнительной информации
         showItemDetails(null);
@@ -52,6 +57,7 @@ public class ItemOverviewController {
         if (item != null) {
             itemLabel.setText(item.getItemOfExp());
             atAllLabel.setText(Integer.toString(item.getCostsAtAll()));
+            yearLabel.setText(Integer.toString(item.getCostsAtAll()));
             monthLabel.setText(Integer.toString(item.getCostsAtMonth()));
             //выводим значение общих среднемесячных расходов
             int t = 0;
@@ -62,6 +68,7 @@ public class ItemOverviewController {
         } else {
             itemLabel.setText("");
             atAllLabel.setText("");
+            yearLabel.setText("");
             monthLabel.setText("");
         }
     }

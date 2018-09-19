@@ -8,6 +8,7 @@ import javafx.beans.property.StringProperty;
 public class Item {
     private final StringProperty itemOfExp;//название статьи расходов
     private final IntegerProperty costsAtAll;//траты за все время
+    private final IntegerProperty costsAtYear;//траты за год
     private final IntegerProperty costsAtMonth;//траты в месяц
 
     public Item() {
@@ -17,6 +18,7 @@ public class Item {
     public Item(String itemOfExp) {
         this.itemOfExp = new SimpleStringProperty(itemOfExp);
         this.costsAtAll = new SimpleIntegerProperty(560000);
+        this.costsAtYear = new SimpleIntegerProperty(560000/25);
         this.costsAtMonth = new SimpleIntegerProperty(560000/300);
     }
 
@@ -36,6 +38,14 @@ public class Item {
         return costsAtAll;
     }
 
+    public int getCostsAtYear() {
+        return costsAtYear.get();
+    }
+
+    public IntegerProperty costsAtYearProperty() {
+        return costsAtYear;
+    }
+
     public int getCostsAtMonth() {
         return costsAtMonth.get();
     }
@@ -50,6 +60,11 @@ public class Item {
 
     public void setCostsAtAll(int costsAtAll) {
         this.costsAtAll.set(costsAtAll);
+    }
+
+    public void setCostsAtYear(int costsAtYear) {
+        costsAtYear = this.getCostsAtAll()/25;
+        this.costsAtYear.set(costsAtYear);
     }
 
     public void setCostsAtMonth(int costsAtMonth) {
