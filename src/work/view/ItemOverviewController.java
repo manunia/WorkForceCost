@@ -57,7 +57,7 @@ public class ItemOverviewController {
         if (item != null) {
             itemLabel.setText(item.getItemOfExp());
             atAllLabel.setText(Integer.toString(item.getCostsAtAll()));
-            yearLabel.setText(Integer.toString(item.getCostsAtAll()));
+            yearLabel.setText(Integer.toString(item.getCostsAtYear()));
             monthLabel.setText(Integer.toString(item.getCostsAtMonth()));
             //выводим значение общих среднемесячных расходов
             int t = 0;
