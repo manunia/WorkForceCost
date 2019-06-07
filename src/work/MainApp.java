@@ -44,7 +44,6 @@ public class MainApp extends Application {
     }
 
     public ObservableList<Item> getItemData() {
-
         return itemData;
     }
 

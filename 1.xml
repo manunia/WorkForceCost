@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+    <item>
+        <costsAtAll>200000</costsAtAll>
+        <costsAtMonth>666</costsAtMonth>
+        <itemOfExp>5 компьютеров 40 000 руб. × 5</itemOfExp>
+    </item>
+    <item>
+        <costsAtAll>271500</costsAtAll>
+        <costsAtMonth>905</costsAtMonth>
+        <itemOfExp>культурно бытовой техники</itemOfExp>
+    </item>
+    <item>
+        <costsAtAll>8585400</costsAtAll>
+        <costsAtMonth>28618</costsAtMonth>
+        <itemOfExp>Квартира 94,9 кв. м</itemOfExp>
+    </item>
+    <item>
+        <costsAtAll>645000</costsAtAll>
+        <costsAtMonth>2150</costsAtMonth>
+        <itemOfExp>книг, газет, журналов, музыкальных записей, интернет и мобильной связи</itemOfExp>
+    </item>
+    <item>
+        <costsAtAll>1800000</costsAtAll>
+        <costsAtMonth>6000</costsAtMonth>
+        <itemOfExp>коммунальных услуг</itemOfExp>
+    </item>
+    <item>
+        <costsAtAll>100800</costsAtAll>
+        <costsAtMonth>336</costsAtMonth>
+        <itemOfExp>Охрана квартиры</itemOfExp>
+    </item>
+    <item>
+        <costsAtAll>800000</costsAtAll>
+        <costsAtMonth>2666</costsAtMonth>
+        <itemOfExp>ремонт квартиры (2 раза). </itemOfExp>
+    </item>
+    <item>
+        <costsAtAll>469996</costsAtAll>
+        <costsAtMonth>1566</costsAtMonth>
+        <itemOfExp>Страхование жизни и здоровья заёмщика, жилья (1% от суммы кредита) </itemOfExp>
+    </item>
+</items>
